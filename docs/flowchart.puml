@@ -1,0 +1,30 @@
+@startuml
+start
+
+:Display menu options;
+repeat
+  :Read user input;
+
+  if (Add Product option?) then (Yes)
+    :Read and validate user input: name, price and quantity;
+    if (Product already exists?) then (Yes)
+      :Show error - Duplicate product;
+    else
+      :Add product to inventory;
+    endif
+  elseif (Remove Product option?) then (Yes)
+    :Read and validate user input (product name and quantity);
+    if (Product exists with specified quantity?) then (Yes)
+      :Remove product;
+    else
+      :Show error - Insufficient stock or product not found;
+    endif
+  elseif (List Products option?) then (Yes)
+    :Display product name, price, and quantity;
+  else
+    :Show message - Invalid option;
+  endif
+
+repeat while (User wants to continue?)
+stop
+@enduml
