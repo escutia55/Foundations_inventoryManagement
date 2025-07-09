@@ -1,8 +1,7 @@
 @startuml
 start
-
-:Display menu options;
 repeat
+:Display menu options;
   :Read user input;
 
   if (Add Product option?) then (Yes)
