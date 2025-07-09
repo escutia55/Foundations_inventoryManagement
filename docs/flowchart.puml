@@ -18,6 +18,13 @@ repeat
     else
       :Show error - Insufficient stock or product not found;
     endif
+  elseif (Update Product option?) then (Yes)
+    :Read and validate user input: name;
+    if (Product exists?) then (Yes)
+      :Add the specified quantity to the product;
+    else
+      :Show error - Product not found;
+    endif
   elseif (List Products option?) then (Yes)
     :Display product name, price, and quantity;
   else
